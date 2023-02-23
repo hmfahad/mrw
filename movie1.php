@@ -36,6 +36,14 @@
                 echo '</a>';        
 
             ?>
+
+            <br>
+
+            <a href="moviesite.php?movienum=5"> Click here to see my top 5 movies. </a>
+
+            <br>
+
+            <a href="moviesite.php? movienum=10"> Click here to see my top 10 movies. </a>
             
         </body>
 
