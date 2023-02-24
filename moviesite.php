@@ -3,7 +3,7 @@ session_start();
 
 //check to see if user has logged in with a valid password
 
-if($_SESSION['authuser'] !=1 ) {
+if ($_SESSION['authuser'] !=1 ) {
 
     echo 'Sorry, but you don\'t have permission to view this page!';
     exit();
@@ -65,13 +65,14 @@ if($_SESSION['authuser'] !=1 ) {
             echo $movierate;
 
             } else {
-                echo 'My top';
+                echo 'My top ';
                 echo $_GET['movienum'];
                 echo 'movies are: ';
                 echo '<br/>';
 
                 listmovies_1();
-                if($_GET['movienum']) == 10 {
+                
+                if($_GET['movienum'] == 10) {
                     listmovies_2();
                 }
             }
