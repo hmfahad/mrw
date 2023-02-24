@@ -29,6 +29,9 @@
 
 
         <body>
+
+            <?php include 'header.php' ?>
+
             <?php
                 $myfavmovie = urlencode('Life of Brain');
                 echo "<a href=\"moviesite.php?favmovie=$myfavmovie\">";
@@ -43,7 +46,7 @@
 
             <br>
 
-            <a href="moviesite.php? movienum=10"> Click here to see my top 10 movies. </a>
+            <a href="moviesite.php?movienum=10"> Click here to see my top 10 movies. </a>
             
         </body>
 

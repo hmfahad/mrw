@@ -14,18 +14,29 @@ if($_SESSION['authuser'] !=1 ) {
 
 <html>
     <head>
-        <title> Myt Movie Site - <?php echo $_GET['favmovie']; ?> </title>
+        <title>
+            <?php 
+                if (isset($_GET['favmovie'])){
+                    echo '-';
+                    echo $_GET['favmovie'];
+                }
+
+            ?>
+        </title>  
+       
+        
 
     </head>
 
     <body>
+        <?php include 'header.php'; ?>
 
         <?php
 
             function listmovies_1(){
                 echo '1. Life of Brain <br/>';
                 echo '2. Sripes <br/>';
-                echo '3. Office Space';
+                echo '3. Office Space<br/>';
                 echo '4. The Holy Grail <br/>';
                 echo '5. Matrix <br/>';
             }
@@ -38,7 +49,7 @@ if($_SESSION['authuser'] !=1 ) {
                 echo '10. Caddyshack <br/>';
             }
 
-            if(isset($_GET['favmovie'])){
+            if (isset($_GET['favmovie'])){
                 
             
 
@@ -55,12 +66,12 @@ if($_SESSION['authuser'] !=1 ) {
 
             } else {
                 echo 'My top';
-                echo $_GET['movienum']== 5;
+                echo $_GET['movienum'];
                 echo 'movies are: ';
                 echo '<br/>';
 
                 listmovies_1();
-                if($_GET['movienum'])== 10 {
+                if($_GET['movienum']) == 10 {
                     listmovies_2();
                 }
             }
