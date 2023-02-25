@@ -41,11 +41,23 @@
 
             <br>
 
-            <a href = 'moviesite.php'> Click here to see my 10 movie. </a>
-            
-            </br>
+            or Chose how many movies you would like to see;
 
-            <a href ='moviesite.php? sorted=true'> Click here to see my top 10 mivies sorted alphabetticall. </a>
+            <br/>
+
+            <form method = "post" action ='moviesite.php'>
+                <p> Enter number of movies (up to 10);
+                    <input type = 'text' name = 'num' maxlength = '2' size ='2'/>
+                    <br/>
+
+                    Check to sort them alphabetically:
+                    <input type = 'checkbox' name = 'sorted'/>
+                </p>
+
+
+                    <input type = 'submit' name ='submit' value = 'Submit'/>
+
+            </form>
 
            
             

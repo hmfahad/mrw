@@ -65,19 +65,20 @@ if ($_SESSION['authuser'] !=1 ) {
             echo $movierate;
 
             } else {
-                echo 'My top 10 favorite movies are: <br/>';
+                echo 'My top'. $_POST['num'] . 'favorite movies are: <br/>';
 
-                if (isset($_GET['sorted'])){
+                if (isset($_POST['sorted'])){
                     sort($favmovies);
                 }
 
                 echo '<ol>';
                 
-                foreach($favmovies as $movi){
+                $num = 0;
+                while($num<$_POST['num']){
                     echo '<li>';
-                    echo $movi;
+                    echo $favmovies[$num];
                     echo '</li>';
-
+                    $num++;
                 }
 
                 echo '</ol>';
