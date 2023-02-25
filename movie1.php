@@ -41,11 +41,13 @@
 
             <br>
 
-            <a href="moviesite.php?movienum=5"> Click here to see my top 5 movies. </a>
+            <a href = 'moviesite.php'> Click here to see my 10 movie. </a>
+            
+            </br>
 
-            <br>
+            <a href ='moviesite.php? sorted=true'> Click here to see my top 10 mivies sorted alphabetticall. </a>
 
-            <a href="moviesite.php?movienum=10"> Click here to see my top 10 movies. </a>
+           
             
         </body>
 

@@ -33,21 +33,21 @@ if ($_SESSION['authuser'] !=1 ) {
 
         <?php
 
-            function listmovies_1(){
-                echo '1. Life of Brain <br/>';
-                echo '2. Sripes <br/>';
-                echo '3. Office Space<br/>';
-                echo '4. The Holy Grail <br/>';
-                echo '5. Matrix <br/>';
-            }
+            $favmovies = array(
+                'Life of Brain',
+                'Sripes',
+                'Office Space',
+                'The Holy Grail',
+                'Matrix',
+                'Terminato',
+                'Star Trek IV',
+                'Close Enconters of the Third Kind',
+                'Sixteen Candlen',
+                'Caddyshack'
+            );
 
-            function listmovies_2(){
-                echo '6. Terminator 2<br/>';
-                echo '7. Star Trek IV<br/>';
-                echo '8. Close Encounters of the Third Kind <br/>';
-                echo '9. Sixteen Candles <br/>';
-                echo '10. Caddyshack <br/>';
-            }
+
+            
 
             if (isset($_GET['favmovie'])){
                 
@@ -65,16 +65,24 @@ if ($_SESSION['authuser'] !=1 ) {
             echo $movierate;
 
             } else {
-                echo 'My top ';
-                echo $_GET['movienum'];
-                echo 'movies are: ';
-                echo '<br/>';
+                echo 'My top 10 favorite movies are: <br/>';
 
-                listmovies_1();
-                
-                if($_GET['movienum'] == 10) {
-                    listmovies_2();
+                if (isset($_GET['sorted'])){
+                    sort($favmovies);
                 }
+
+                echo '<ol>';
+                
+                foreach($favmovies as $movi){
+                    echo '<li>';
+                    echo $movi;
+                    echo '</li>';
+
+                }
+
+                echo '</ol>';
+               
+               
             }
             
         ?>
