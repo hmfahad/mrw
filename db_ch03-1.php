@@ -2,18 +2,20 @@
 
 //Connect to mySQL
 
-$db = mysql_connect('localhost', 'bp6am', 'bp6ampass') or
+$db = mysqli_connect('localhost', 'root', '', 'moviesite') or
     die ('Unable to connect, Check your connection parameters');
 
     //Create the main database ifit doesn't already exist
 
-    $query = 'CREATE DATABASE IF NOT EXISTS moviesite';
-    mysql_query($query, $db) or die (mysql_error($db));
+  //  $query = 'CREATE DATABASE IF NOT EXISTS moviesite';
+   // mysqli_query($query, $db) or die (mysqli_error($db));
 
     //make sure our recently created database is the active one
-    mysql_select_db('moviesite', $db) or die (mysql_error ($db));
+    //mysql_select_db('moviesite', $db) or die (mysql_error ($db));
 
     //create the movie table
+
+    /*
 
     $query = 'CREATE TABLE movie (
         movie_id        INTEGER UNSIGNED    NOT NULL AUTO_INCREMENT,
@@ -28,11 +30,15 @@ $db = mysql_connect('localhost', 'bp6am', 'bp6ampass') or
 
     )
 
-    ENGINE = MyISAM';
+    */
 
-    mysql_query($query, $db) or die (mysql_error($db));
+    // ENGINE = MyISAM';
+
+   // mysqli_query($query, $db) or die (mysql_error($db));
 
     //Create the movietype table
+
+    /*
 
     $query = 'CREATE TABLE movietype(
         movietype_id    TINYINT UNSIGNED    NOT NULL AUTO_INCREMENT,
@@ -41,19 +47,24 @@ $db = mysql_connect('localhost', 'bp6am', 'bp6ampass') or
         )
         ENGINE = MyISAM';
     mysql_query($query, $db) or die (mysql_error($db));
+*/
 
     //create the people table
+
+    /*
     $query = 'CREATE TABLE people (
-        people_id           INTEGER UNSIGNED        NOT NULL ATUT_INCREMENT,
+        people_id           INTEGER UNSIGNED        NOT NULL AUTO_INCREMENT,
         people_fullname     VARCHAR(255)            NOT NULL,
         people_isactor      TINYINT(1)  UNSIGNED    NOT NULL DEFAULT 0,
         people_isdirector   TINYINT(1)  UNSIGNED    NOT NULL    DEFAULT 0,
 
         PRIMARY KEY (people_id)
     )
-    ENGINE = MyISAM';
+    ENGINE = mariaDB';
     
     mysql_query($query, $db) or die (mysql_error($db));
+
+    */
 
     echo 'Movie database successfully created';
     ?>
