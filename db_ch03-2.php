@@ -1,7 +1,7 @@
 <?php
 //connet to mySQL
 
-$db = mysql_connect ('localhost', 'bp61m', 'bp6ampass') or
+$db = mysqli_connect ('localhost', 'bp61m', 'bp6ampass') or
     die ('Unable to connect, Check your connection parameters.');
 
     //make sure you're using the correct database
@@ -25,7 +25,7 @@ $db = mysql_connect ('localhost', 'bp61m', 'bp6ampass') or
     $query = 'INSERT INTO movietype
                 (movietype_id, movietype_label)
         VALUES  
-                (1, 'Sci Fi'),
+                (1, 'Sc Fi'),
                 (2, 'Drama'),
                 (3, 'Adventure'),
                 (4, 'War'),

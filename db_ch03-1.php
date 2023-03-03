@@ -2,7 +2,7 @@
 
 //Connect to mySQL
 
-$db = mysql_connect('localhost', 'bp6am', 'bp6ampass') or
+$db = mysqli_connect('localhost', 'username', 'password','mydb') or
     die ('Unable to connect, Check your connection parameters');
 
     //Create the main database ifit doesn't already exist
