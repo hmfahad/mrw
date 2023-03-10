@@ -2,9 +2,41 @@
 //connet to mySQL
 
 include("connection.php");
-
-
 echo "<br>";
+
+//Delete people table record
+
+if($result=$conn->query("DELETE FROM people") === TRUE ) {
+        echo "People table record deleted successfully";
+        echo "<br>";
+} else {
+        echo "Error to delete people table data" . $conn->error;
+        echo "<br>";
+}
+
+
+//Delete movie table record
+
+if($result=$conn->query("DELETE FROM movie") === TRUE ) {
+        echo "movie table record deleted successfully";
+        echo "<br>";
+} else {
+        echo "Error to delete movie table data" . $conn->error;
+        echo "<br>";
+}
+
+
+//Delete movietype table record
+
+if($result=$conn->query("DELETE FROM movietype") === TRUE ) {
+        echo "movietype table record deleted successfully";
+        echo "<br>";
+} else {
+        echo "Error to delete movietype table data" . $conn->error;
+        echo "<br>";
+}
+
+
     //insert data into the movie table
 
     $sql = "INSERT INTO movie
@@ -62,33 +94,14 @@ echo "<br>";
                         (6, 'Mike Judge', 0, 1)";
 
                 if ($conn->query($s) === TRUE){
-                        echo "Connection success of people table";
+                        echo "people table data inserted";
                         echo "<br>";
                 } else {
                         echo "Error in people table" . $s . "<br>" . $conn->error;
                         echo "<br>";
                 }
           
-        //insert data into the people table
 
-                $sql = 'INSERT INTO people
-                        (people_id, people_fullname, people_isactor, people_isdirector)
-                VALUES
-                        (1, "Jim Carrey", 1, 0),
-                        (2, "Tom Shadyac" 0, 1),
-                        (3, "Lawrence Kasdan", 0, 1),
-                        (4, "Kevin Kline", 1, 0),
-                        (5, "Ron Livingston", 1, 0),
-                        (6, "Mike Judge", 0, 1)';
-
-        if ($conn->query($sql) === TRUE){
-                 echo "People table record Created Successfully";
-                 echo "<br>";
-        } else {
-                 echo "Error: " . $sql . "<br>" . $conn->error;
-                 echo "<br>";
-
-        }
 
 $conn->close();
 
