@@ -1,12 +1,9 @@
 
 <?php
 
-
-
 include("connection.php");
 
 // Retrive information
-
 
 $sql = "SELECT
         movie_name, movie_year, movie_director, movie_leadactor,
@@ -21,21 +18,7 @@ $sql = "SELECT
 
     $numMovies = $result->num_rows;
 
-
-
- 
-
-?>
-
-
-
-
-
-
-
-
-
-
+$table = <<<ENDHTML
 
 <div style= "text-align: center">
 
@@ -52,37 +35,33 @@ $sql = "SELECT
             <th> Movie Type </th>
 
         </tr>
-
-  
-
-
-<?php
-
-
+ENDHTML;
 
     while ($row = $result->fetch_assoc()){
         
+$table .=<<<ENDHTML
+        <tr>
+        <td> $row[movie_name] </td>
+        <td> $row[movie_year] </td>
+        <td> $row[movie_director] </td>
+        <td> $row[movie_leadactor] </td>
+        <td> $row[movie_type] </td>
+        </tr>
+ENDHTML;
 
-        echo "<tr>";
-        echo "<td>" . $row["movie_name"] . "</td>";
-        echo "<td>" . $row["movie_year"] . "</td>";
-        echo "<td>" . $row["movie_director"] . "</td>";
-        echo "<td>" . $row["movie_leadactor"] . "</td>";
-        echo "<td>" . $row["movie_type"] . "</td>";
-
-        echo "</tr>";
     }
 
-    
+$table .= <<<ENDHTML
 
+</table>
 
-echo "</table>";
-
-    echo " <br> <br> Number of Movies is : " . $numMovies;
-
-?>
-  
-
+    <br> <br> Number of Movies is : $numMovies
 
 </div>
 
+ENDHTML;
+
+echo $table;
+$result->close();
+
+?>
