@@ -107,7 +107,7 @@ if($result = $db->query("SELECT DATABASE()")){
 //Retrive information
 
 $query = "SELECT
-            movie_name, movie_year, movie_director, movie_leadacotr, movie_type
+            movie_name, movie_year, movie_director, movie_leadactor, movie_type
         FROM
             movie
         ORDER BY
